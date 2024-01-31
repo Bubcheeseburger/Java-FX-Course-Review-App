@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="reviews.CourseSearchController">
+   <children>
+      <TextField fx:id="subjectBar" layoutX="118.0" layoutY="33.0" prefHeight="25.0" prefWidth="90.0" />
+      <TextField fx:id="numberBar" layoutX="310.0" layoutY="33.0" prefHeight="25.0" prefWidth="90.0" />
+       <TextField fx:id="titleBar" layoutX="477.0" layoutY="33.0" prefHeight="25.0" prefWidth="242.0" />
+      <Button layoutX="760.0" layoutY="33.0" mnemonicParsing="false" onAction="#handleSearchButton" prefHeight="25.0" prefWidth="90.0" text="Search" />
+      <Separator layoutX="230.0" layoutY="16.0" orientation="VERTICAL" prefHeight="59.0" prefWidth="0.0" />
+      <Separator layoutX="420.0" layoutY="16.0" orientation="VERTICAL" prefHeight="59.0" prefWidth="6.0" />
+      <Separator layoutX="738.0" layoutY="16.0" orientation="VERTICAL" prefHeight="59.0" prefWidth="0.0" />
+      <TableView fx:id="courses" layoutY="96.0" prefHeight="429.0" prefWidth="900.0" onMouseClicked="#handleRowClicked">
+        <columns>
+          <TableColumn prefWidth="138.0" text="Subject">
+              <cellValueFactory><PropertyValueFactory property="subject" />
+              </cellValueFactory></TableColumn>
+          <TableColumn minWidth="0.0" prefWidth="143.0" text="Number">
+            <cellValueFactory><PropertyValueFactory property="number" />
+            </cellValueFactory></TableColumn>
+           <TableColumn minWidth="0.0" prefWidth="527.0" text="Title">
+          <cellValueFactory><PropertyValueFactory property="title" />
+          </cellValueFactory></TableColumn>
+            <TableColumn minWidth="0.0" prefWidth="91.0" text="Rating">
+       <cellValueFactory><PropertyValueFactory property="rating" />
+       </cellValueFactory></TableColumn>
+        </columns>
+      </TableView>
+      <Label layoutX="66.0" layoutY="37.0" text="Subject" />
+      <Label layoutX="439.0" layoutY="37.0" text="Title" />
+      <Label layoutX="252.0" layoutY="37.0" text="Number" />
+      <Label fx:id="message" alignment="CENTER" contentDisplay="CENTER" layoutY="77.0" prefHeight="17.0" prefWidth="900.0" text="Welcome admin" textAlignment="CENTER" />
+      <Separator layoutX="6.0" layoutY="74.0" prefHeight="2.0" prefWidth="892.0" />
+      <Label layoutX="72.0" layoutY="554.0" text="Add New Course:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+       <TextField fx:id="subjectAdd" layoutX="178.0" layoutY="550.0" prefWidth="78.0" promptText="Subject" />
+       <TextField fx:id="numberAdd" layoutX="270.0" layoutY="550.0" prefWidth="78.0" promptText="Number" />
+       <TextField fx:id="titleAdd" layoutX="361.0" layoutY="550.0" prefHeight="25.0" prefWidth="160.0" promptText="Title" />
+      <Button layoutX="535.0" layoutY="550.0" mnemonicParsing="false" onAction="#handleAddCourseButton" text="Add Course" />
+      <Button layoutX="645.0" layoutY="550.0" mnemonicParsing="false" onAction="#handleMyReviewsButton" text="My Reviews" />
+      <Separator layoutX="629.0" layoutY="533.0" orientation="VERTICAL" prefHeight="59.0" prefWidth="0.0" />
+      <Separator layoutX="736.0" layoutY="533.0" orientation="VERTICAL" prefHeight="59.0" prefWidth="0.0" />
+      <Button layoutX="779.0" layoutY="550.0" mnemonicParsing="false" onAction="#handleLogOutButton" prefHeight="25.0" prefWidth="78.0" text="Log Out" />
+   </children>
+</AnchorPane>
